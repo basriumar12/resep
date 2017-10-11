@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        android:layout_margin="7dp"
+        app:cardCornerRadius="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+            <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/imgmakanan"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+
+            android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/txtnama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nama"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <View
+                android:background="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="isi "
+                    android:textSize="17sp"
+                    android:id="@+id/txtdetail"/>
+
+            </ScrollView>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
