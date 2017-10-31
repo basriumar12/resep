@@ -3,7 +3,7 @@
 // definisikan koneksi ke database
  include './config/koneksi.php';
   //mysqli_select_db($database) or die("Database tidak bisa dibuka");
-   
+   //coment 2
 //coment
     if(isset($_GET["id_resep"])){
         $id=$_GET["id_resep"];
