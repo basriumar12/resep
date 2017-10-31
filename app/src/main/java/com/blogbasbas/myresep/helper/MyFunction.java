@@ -28,7 +28,7 @@ public class MyFunction extends AppCompatActivity {
     public void pesan (String isipesan){
         Toast.makeText(con, isipesan , Toast.LENGTH_SHORT).show();
     }
-    //munculkan alert
+    //munculkan alert deh
     public void alertdialog (String message){
         AlertDialog.Builder builder = new  AlertDialog.Builder(con);
         builder.setTitle("informasi");
