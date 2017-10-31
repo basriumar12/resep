@@ -29,7 +29,7 @@ public class DetailActivity extends MyFunction {
 
         Intent terima = getIntent();
         txtnama.setText(terima.getStringExtra("nm"));
-
+        // Hehe
         txtdetail.setText(terima.getStringExtra("i"));
         Picasso.with(con).load(MyConstant.IMAGE_URL+terima.getStringExtra("gb")).
                 error(R.mipmap.ic_launcher).into(imgmakanan);
