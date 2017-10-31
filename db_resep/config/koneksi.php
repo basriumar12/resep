@@ -1,5 +1,5 @@
 <?php
-
+//def 
 // definisikan koneksi ke database
 $server = "localhost";
 $username = "root";
