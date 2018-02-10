@@ -1,6 +1,8 @@
 package com.blogbasbas.myresep;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,6 +18,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,6 +32,9 @@ public class ResepActivity extends MyFunction {
     RecyclerView.LayoutManager layoutManager;
     //membuat variabel datamakan menggunakn List (untuk menampung data)
     List<Resep> dataresep;
+    @BindView(R.id.addData)
+    FloatingActionButton addData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,15 +64,15 @@ public class ResepActivity extends MyFunction {
         modelResepCall.enqueue(new Callback<ModelResep>() {
             @Override
             public void onResponse(Call<ModelResep> call, Response<ModelResep> response) {
-                String pesan =  response.body().getPesan();
+                String pesan = response.body().getPesan();
                 String sukses = response.body().getSukses();
 
-                if (sukses.equals("true")){
+                if (sukses.equals("true")) {
                     pesan(pesan);
-                    Log.d("  Retrofit "," Berhasil dapatkan " +pesan);
-                    Log.d("  Retrofit "," Berhasil dapatkan " +sukses);
+                    Log.d("  Retrofit ", " Berhasil dapatkan " + pesan);
+                    Log.d("  Retrofit ", " Berhasil dapatkan " + sukses);
 
-                    dataresep =  response.body().getResep();
+                    dataresep = response.body().getResep();
                     //showdata makanan
                     tampildatamakanan();
 
@@ -85,11 +91,17 @@ public class ResepActivity extends MyFunction {
 
     private void tampildatamakanan() {
 
-        String items []= new String[dataresep.size()];
-        for (int i=0;i<dataresep.size();i++){
-            items[i]=dataresep.get(i).getNamaResep1();
+        String items[] = new String[dataresep.size()];
+        for (int i = 0; i < dataresep.size(); i++) {
+            items[i] = dataresep.get(i).getNamaResep1();
         }
         RecylerViewAdapter adapter = new RecylerViewAdapter(con, dataresep);
         listresep.setAdapter(adapter);
+    }
+
+    @OnClick(R.id.addData)
+    public void onViewClicked() {
+        startActivity(new Intent(this,MainActivity.class));
+
     }
 }

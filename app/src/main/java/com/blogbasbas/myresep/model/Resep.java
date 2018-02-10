@@ -15,6 +15,10 @@ public class Resep {
     private String mIdResep1;
     @SerializedName("nama_resep1")
     private String mNamaResep1;
+    @SerializedName("kode")
+    private String mKode;
+    @SerializedName("pesan")
+    private String mPesan;
 
     public String getDetail1() {
         return mDetail1;

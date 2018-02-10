@@ -53,6 +53,9 @@ public class RecylerViewAdapter extends RecyclerView.Adapter<RecylerViewAdapter.
             @Override
             public void onClick(View view) {
                 Intent kirim = new Intent(con, DetailActivity.class);
+                //tambaahan
+                kirim.putExtra("id",data_resep.get(position).getIdResep1());
+
                 kirim.putExtra("nm",data_resep.get(position).getNamaResep1());
                 kirim.putExtra("gb",data_resep.get(position).getGambar1());
                 kirim.putExtra("i",data_resep.get(position).getDetail1());

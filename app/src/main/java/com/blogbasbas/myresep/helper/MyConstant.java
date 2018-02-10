@@ -7,9 +7,10 @@ package com.blogbasbas.myresep.helper;
 public class MyConstant {
     //penting menggunakan retrofit harus di akhiri '/'
     //ip dibawah  adalah ip dari laptop kita untuk mengakases server local
-    public static final String BASE_URL = "http://192.168.95.35/db_resep/getdataresep.php/";
+    public static final String BASE_URL = "http://192.168.95.41/db_resep/getdataresep.php/";
+    public static final String BASE_URL1 = "http://192.168.95.41/db_resep/";
 
-    public static final String IMAGE_URL = "http://192.168.95.35/db_resep/foto_makanan/";
+    public static final String IMAGE_URL = "http://192.168.95.41/db_resep/foto_makanan/";
 
 
 
