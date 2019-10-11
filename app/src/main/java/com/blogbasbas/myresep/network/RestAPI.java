@@ -36,4 +36,9 @@ public interface RestAPI {
     @FormUrlEncoded
     @POST("delete.php")
     Call<ResponseModel> deleteData(@Field("id_resep") String id);
+    
+        //delete menggunakan parameter id for new delete
+    @FormUrlEncoded
+    @POST("delete_new.php")
+    Call<ResponseModel> deleteNewData(@Field("id_resep") String id);
 }
