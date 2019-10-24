@@ -69,9 +69,7 @@ public class ResepActivity extends MyFunction {
 
                 if (sukses.equals("true")) {
                     pesan(pesan);
-                    Log.d("  Retrofit ", " Berhasil dapatkan " + pesan);
-                    Log.d("  Retrofit ", " Berhasil dapatkan " + sukses);
-
+             
                     dataresep = response.body().getResep();
                     //showdata makanan
                     tampildatamakanan();
@@ -88,7 +86,8 @@ public class ResepActivity extends MyFunction {
         });
 
     }
-
+    //bagian ini untuk looping data dari response
+    //sebenarnya gak usah pakai gak apa2
     private void tampildatamakanan() {
 
         String items[] = new String[dataresep.size()];
