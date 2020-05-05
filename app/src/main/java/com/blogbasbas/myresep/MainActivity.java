@@ -2,7 +2,6 @@ package com.blogbasbas.myresep;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -10,8 +9,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.blogbasbas.myresep.model.ModelResep;
-import com.blogbasbas.myresep.model.ResponseInsert;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.blogbasbas.myresep.model.ResponseModel;
 import com.blogbasbas.myresep.network.RestAPI;
 import com.blogbasbas.myresep.network.RetroServer;
