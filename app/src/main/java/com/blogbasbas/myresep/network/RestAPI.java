@@ -21,9 +21,9 @@ public interface RestAPI {
 
     @FormUrlEncoded
     @POST("insert.php")
-    Call<ResponseModel> sendBiodata(@Field("nama_resep") String nama,
-                                    @Field("detail") String detail,
-                                    @Field("gambar") String gambar);
+    Call<ResponseModel> insertData(@Field("nama_resep") String nama,
+                                   @Field("detail") String detail,
+                                   @Field("gambar") String gambar);
     //update menggunakan 3 parameter
     @FormUrlEncoded
     @POST("update.php")

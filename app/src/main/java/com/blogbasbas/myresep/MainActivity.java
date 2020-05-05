@@ -16,8 +16,6 @@ import com.blogbasbas.myresep.network.RestAPI;
 import com.blogbasbas.myresep.network.RetroServer;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -91,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     edtResep.setError("detail resep perlu di isi");
                 } else {
                     RestAPI api = RetroServer.getClient().create(RestAPI.class);
-                    Call<ResponseModel> insertResep = api.sendBiodata(snama,sgambar,sresep);
+                    Call<ResponseModel> insertResep = api.insertData(snama,sresep,sgambar);
                     insertResep.enqueue(new Callback<ResponseModel>() {
                         @Override
                         public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
