@@ -3,6 +3,7 @@ package com.blogbasbas.myresep;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,8 +41,8 @@ public class ResepActivity extends MyFunction {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resep);
-        ButterKnife.bind(this);
-
+        listresep = findViewById(R.id.listresep);
+        addData = findViewById(R.id.addData);
         //layoutManager = new GridLayoutManager(con,2);
         layoutManager = new LinearLayoutManager(con);
         //id dari recylerfivew
@@ -49,6 +50,12 @@ public class ResepActivity extends MyFunction {
 
         //method menampilkan data
         getDatamakanan();
+        addData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onViewClicked();
+            }
+        });
     }
 
     private void getDatamakanan() {
@@ -98,9 +105,9 @@ public class ResepActivity extends MyFunction {
         }
         RecylerViewAdapter adapter = new RecylerViewAdapter(con, dataresep);
         listresep.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
-    @OnClick(R.id.addData)
     public void onViewClicked() {
         startActivity(new Intent(this,MainActivity.class));
 

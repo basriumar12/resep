@@ -28,9 +28,10 @@ public class DetailActivity extends MyFunction {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        ButterKnife.bind(this);
 
-        Intent terima = getIntent();
+        imgmakanan = findViewById(R.id.imgmakanan);
+        txtnama= findViewById(R.id.txtnama);
+        txtdetail = findViewById(R.id.txtdetail);
         //tambahan
          id = getIntent().getStringExtra("id");
          nama = getIntent().getStringExtra("nm");

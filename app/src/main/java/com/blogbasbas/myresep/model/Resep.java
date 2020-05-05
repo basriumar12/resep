@@ -7,13 +7,13 @@ import com.google.gson.annotations.SerializedName;
 @SuppressWarnings("unused")
 public class Resep {
 
-    @SerializedName("detail1")
+    @SerializedName("detail")
     private String mDetail1;
-    @SerializedName("gambar1")
+    @SerializedName("gambar")
     private String mGambar1;
-    @SerializedName("id_resep1")
+    @SerializedName("id_resep")
     private String mIdResep1;
-    @SerializedName("nama_resep1")
+    @SerializedName("nama_resep")
     private String mNamaResep1;
     @SerializedName("kode")
     private String mKode;

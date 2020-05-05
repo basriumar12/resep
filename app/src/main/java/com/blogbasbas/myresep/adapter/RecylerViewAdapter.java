@@ -2,6 +2,7 @@ package com.blogbasbas.myresep.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,7 @@ public class RecylerViewAdapter extends RecyclerView.Adapter<RecylerViewAdapter.
         holder.txtnama.setText(data_resep.get(position).getNamaResep1());
         Picasso.with(con).load(MyConstant.IMAGE_URL+data_resep.get(position).getGambar1()).error(R.mipmap.ic_launcher)
                 .into(holder.imgMakanan);
+        Log.e("TAG","data rv"+data_resep.get(position).getNamaResep1());
 
         //event click
         holder.itemView.setOnClickListener(new View.OnClickListener() {

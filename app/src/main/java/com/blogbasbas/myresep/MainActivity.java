@@ -22,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     @BindView(R.id.pd)
@@ -46,10 +46,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // ini juga
-        // ini set content view
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        btnhapus = findViewById(R.id.btnhapus);
+        btnInsertdata = findViewById(R.id.btn_insertdata);
+        btntampildata = findViewById(R.id.btntampildata);
+        btnUpdate = findViewById(R.id.btnUpdate);
+        edtGambar = findViewById(R.id.edt_gambar);
+        edtNama = findViewById(R.id.edt_nama);
+        edtResep = findViewById(R.id.edtResep);
+        pd = findViewById(R.id.pd);
         Intent getData = getIntent();
         idData = getData.getStringExtra("ID");
         if (idData != null) {
@@ -62,17 +67,24 @@ public class MainActivity extends AppCompatActivity {
             edtResep.setText(getData.getStringExtra("DETAIL"));
 
         }
+
+        btnUpdate.setOnClickListener(this);
+        btntampildata.setOnClickListener(this);
+        btnInsertdata.setOnClickListener(this);
+        btnhapus.setOnClickListener(this);
     }
 
-    @OnClick({R.id.btn_insertdata, R.id.btntampildata, R.id.btnUpdate, R.id.btnhapus})
-    public void onViewClicked(View view) {
+
+
+    @Override
+    public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_insertdata:
                 String snama = edtNama.getText().toString();
                 String sgambar = edtGambar.getText().toString();
                 String sresep = edtResep.getText().toString();
                 if (snama.isEmpty() ) {
-                   edtNama.setError("nama perlu di isi");
+                    edtNama.setError("nama perlu di isi");
                 }else if (sgambar.isEmpty()){
                     edtGambar.setError("gambar perlu di isi");}
                 else if (sresep.isEmpty()){
@@ -87,17 +99,17 @@ public class MainActivity extends AppCompatActivity {
                             try {
 
 
-                           String kode = response.body().getKode();
-                            if (kode.equals("1")){
-                                Toast.makeText(MainActivity.this, "berhasil simpan", Toast.LENGTH_SHORT).show();
-                                 edtGambar.setText("");
-                                 edtNama.setText("");
-                                 edtResep.setText("");
-                               startActivity(new Intent(MainActivity.this, ResepActivity.class));
-                               finish();
-                            }else {
-                                Toast.makeText(MainActivity.this, "data error, gagal simpan", Toast.LENGTH_SHORT).show();
-                            }
+                                String kode = response.body().getKode();
+                                if (kode.equals("1")){
+                                    Toast.makeText(MainActivity.this, "berhasil simpan", Toast.LENGTH_SHORT).show();
+                                    edtGambar.setText("");
+                                    edtNama.setText("");
+                                    edtResep.setText("");
+                                    startActivity(new Intent(MainActivity.this, ResepActivity.class));
+                                    finish();
+                                }else {
+                                    Toast.makeText(MainActivity.this, "data error, gagal simpan", Toast.LENGTH_SHORT).show();
+                                }
                             }catch (NullPointerException e){
                                 Toast.makeText(MainActivity.this, "errror"+e.toString(), Toast.LENGTH_SHORT).show();
                             }
@@ -116,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btnUpdate:
 
-                      RestAPI api = RetroServer.getClient().create(RestAPI.class);
+                RestAPI api = RetroServer.getClient().create(RestAPI.class);
                 Call<ResponseModel> updateData =
                         api.updateData(idData,
                                 edtNama.getText().toString(),
@@ -157,5 +169,6 @@ public class MainActivity extends AppCompatActivity {
                 });
                 break;
         }
+
     }
 }
