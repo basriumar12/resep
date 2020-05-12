@@ -11,16 +11,12 @@ import com.blogbasbas.myresep.helper.MyConstant;
 import com.blogbasbas.myresep.helper.MyFunction;
 import com.squareup.picasso.Picasso;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class DetailActivity extends MyFunction {
 
-    @BindView(R.id.imgmakanan)
+
     ImageView imgmakanan;
-    @BindView(R.id.txtnama)
     TextView txtnama;
-    @BindView(R.id.txtdetail)
     TextView txtdetail;
     String id,nama,detail,gambar;
 

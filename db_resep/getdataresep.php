@@ -19,10 +19,10 @@
         //perulangan
         while ($row=mysqli_fetch_array($sql)){
             $data=array();
-            $data["id_resep1"]=$row["id_resep"];
-            $data["nama_resep1"]=$row["nama_resep"];
-            $data["detail1"]=$row["detail"];
-           $data["gambar1"]=$row["gambar"];
+            $data["id_resep"]=$row["id_resep"];
+            $data["nama_resep"]=$row["nama_resep"];
+            $data["detail"]=$row["detail"];
+           $data["gambar"]=$row["gambar"];
             
          $response["pesan"]="berhasil Mengambil Data";
          $response["sukses"]="true";    

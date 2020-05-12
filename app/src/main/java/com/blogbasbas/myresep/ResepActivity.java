@@ -18,9 +18,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,12 +26,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ResepActivity extends MyFunction {
 
-    @BindView(R.id.listresep)
     RecyclerView listresep;
     RecyclerView.LayoutManager layoutManager;
     //membuat variabel datamakan menggunakn List (untuk menampung data)
     List<Resep> dataresep;
-    @BindView(R.id.addData)
     FloatingActionButton addData;
 
     @Override

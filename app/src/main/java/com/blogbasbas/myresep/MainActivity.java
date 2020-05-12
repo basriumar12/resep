@@ -15,7 +15,6 @@ import com.blogbasbas.myresep.model.ResponseModel;
 import com.blogbasbas.myresep.network.RestAPI;
 import com.blogbasbas.myresep.network.RetroServer;
 
-import butterknife.BindView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,21 +22,13 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    @BindView(R.id.pd)
     ProgressBar pd;
-    @BindView(R.id.btn_insertdata)
     Button btnInsertdata;
-    @BindView(R.id.btntampildata)
     Button btntampildata;
-    @BindView(R.id.btnUpdate)
     Button btnUpdate;
-    @BindView(R.id.btnhapus)
     Button btnhapus;
-    @BindView(R.id.edt_nama)
     EditText edtNama;
-    @BindView(R.id.edt_gambar)
     EditText edtGambar;
-    @BindView(R.id.edtResep)
     EditText edtResep;
     String idData;
 
